@@ -54,3 +54,35 @@ bt.insert(4)
 bt.insert(5)
 
 print("레벨 순회 결과:", bt.level_order())
+
+# 전위 순회
+def preorder(node):
+    if node:
+        print(node.data, end=' ')
+        preorder(node.left)
+        preorder(node.right)
+
+# 중위 순회
+def inorder(node):
+    if node:
+        inorder(node.left)
+        print(node.data, end=' ')
+        inorder(node.right)
+
+# 후위 순회
+def postorder(node):
+    if node:
+        postorder(node.left)
+        postorder(node.right)
+        print(node.data, end=' ')
+
+# 사용 예시 (위에서 만든 트리 활용)
+print("전위 순회: ", end='')
+preorder(bt.root)
+
+print("\n중위 순회: ", end='')
+inorder(bt.root)
+
+print("\n후위 순회: ", end='')
+postorder(bt.root)
+
