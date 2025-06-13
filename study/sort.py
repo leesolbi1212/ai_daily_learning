@@ -44,3 +44,33 @@ insertion_sort(data)
 print("삽입 정렬 결과:", data)
 # → 정렬 결과: [5, 6, 11, 12, 13]
 
+def merge_sort(arr):
+    # 1) 분할: 길이 1 이하이면 그대로 반환
+    if len(arr) <= 1:
+        return arr
+
+    mid = len(arr) // 2
+    left = merge_sort(arr[:mid])     # 왼쪽 절반 정렬
+    right = merge_sort(arr[mid:])    # 오른쪽 절반 정렬
+
+    # 2) 병합 단계
+    merged = []
+    i = j = 0
+    # 양쪽 리스트를 한 칸씩 비교하며 작은 값을 merged에 추가
+    while i < len(left) and j < len(right):
+        if left[i] <= right[j]:
+            merged.append(left[i])
+            i += 1
+        else:
+            merged.append(right[j])
+            j += 1
+    # 남은 요소가 있다면 뒤에 덧붙임
+    merged.extend(left[i:])
+    merged.extend(right[j:])
+    return merged
+
+# 사용 예
+data = [38, 27, 43, 3, 9, 82, 10]
+sorted_data = merge_sort(data)
+print("병합 정렬 결과:", sorted_data)
+# 병합 정렬 결과: [3, 9, 10, 27, 38, 43, 82]
