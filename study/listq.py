@@ -39,6 +39,9 @@ node = queue_linked.head
 while node:
     print(node.data, end=" -> ")
     node = node.next
+    
+# enqueue 후 연결리스트 큐:
+# 1 -> 2 -> 3 -> 
 
 queue_linked.dequeue()
 print("\ndequeue 후 연결리스트 큐:")
@@ -46,3 +49,6 @@ node = queue_linked.head
 while node:
     print(node.data, end=" -> ")
     node = node.next
+    
+# dequeue 후 연결리스트 큐:
+# 2 -> 3 ->

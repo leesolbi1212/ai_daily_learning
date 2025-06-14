@@ -8,5 +8,5 @@ q.put(1)
 q.put(2)
 q.put(3)
 
-print("queue.Queue에서 dequeue:", q.get())
-print("queue.Queue에서 dequeue:", q.get())
+print("queue.Queue에서 dequeue:", q.get()) #queue.Queue에서 dequeue: 1
+print("queue.Queue에서 dequeue:", q.get()) #queue.Queue에서 dequeue: 2

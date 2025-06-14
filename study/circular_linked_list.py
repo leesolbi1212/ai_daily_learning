@@ -85,16 +85,16 @@ if __name__ == "__main__":
     # append
     for x in [10, 20, 30]:
         cll.append(x)
-    print("append 후:", cll.traverse())  
+    print("append 후:", cll.traverse())  # append 후: [10, 20, 30]
     # prepend
     cll.prepend(5)
-    print("prepend 후:", cll.traverse())
+    print("prepend 후:", cll.traverse()) # prepend 후: [5, 10, 20, 30]
     # delete 중간 노드
     cll.delete(20)
-    print("20 삭제 후:", cll.traverse())
+    print("20 삭제 후:", cll.traverse()) # 20 삭제 후: [5, 10, 30]
     # delete 헤드
     cll.delete(5)
-    print("5(헤드) 삭제 후:", cll.traverse())
+    print("5(헤드) 삭제 후:", cll.traverse()) #5 (헤드) 삭제 후: [10, 30]
     # delete 존재하지 않는 값
     removed = cll.delete(999)
-    print("999 삭제 시도:", removed, "→", cll.traverse())
+    print("999 삭제 시도:", removed, "→", cll.traverse()) #999 삭제 시도: False → [10, 30]
