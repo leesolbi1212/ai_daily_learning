@@ -141,3 +141,35 @@ data = [3, 6, 8, 10, 1, 2, 1]
 quick_sort(data)
 print("퀵 정렬 결과:", data)
 # → 퀵 정렬 결과: [1, 1, 2, 3, 6, 8, 10]
+
+def counting_sort(arr):
+    if not arr:
+        return arr
+
+    min_val, max_val = min(arr), max(arr)
+    k = max_val - min_val + 1
+
+    # 1) 카운트 배열 생성 및 개수 세기
+    counts = [0] * k
+    for x in arr:
+        counts[x - min_val] += 1
+
+    # 2) 누적합 처리
+    for i in range(1, k):
+        counts[i] += counts[i - 1]
+
+    # 3) 출력 배열에 안정적으로 배치 (뒤쪽부터)
+    output = [0] * len(arr)
+    for x in reversed(arr):
+        idx = x - min_val
+        counts[idx] -= 1
+        output[counts[idx]] = x
+
+    return output
+
+# 사용 예
+data = [4, 2, 2, 8, 3, 3, 1]
+sorted_data = counting_sort(data)
+print("카운팅 정렬 결과:", sorted_data)
+# → 카운팅 정렬 결과: [1, 2, 2, 3, 3, 4, 8]
+
