@@ -111,3 +111,33 @@ heap_sort(data)
 print("힙 정렬 결과:", data)
 # 출력 → 힙 정렬 결과: [1, 3, 4, 5, 10]
 
+import random
+
+def quick_sort(arr, lo=0, hi=None):
+    if hi is None:
+        hi = len(arr) - 1
+    if lo < hi:
+        p = partition(arr, lo, hi)
+        quick_sort(arr, lo, p - 1)
+        quick_sort(arr, p + 1, hi)
+
+def partition(arr, lo, hi):
+    # 피벗으로 마지막 요소 선택
+    pivot = arr[hi]
+    i = lo - 1
+    for j in range(lo, hi):
+        if arr[j] <= pivot:
+            i += 1
+            arr[i], arr[j] = arr[j], arr[i]
+    # 피벗을 올바른 위치로
+    arr[i + 1], arr[hi] = arr[hi], arr[i + 1]
+    return i + 1
+
+# 사용 예
+data = [3, 6, 8, 10, 1, 2, 1]
+# 랜덤 피벗을 쓰고 싶다면:
+# random.shuffle(data)
+# pivot = arr[random.randint(lo, hi)]
+quick_sort(data)
+print("퀵 정렬 결과:", data)
+# → 퀵 정렬 결과: [1, 1, 2, 3, 6, 8, 10]
