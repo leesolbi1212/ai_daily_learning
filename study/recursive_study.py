@@ -23,3 +23,15 @@ def fibonacci(n):
     return memo[n]
 
 print(fibonacci(10))  # 결과: 55
+
+# 심화 예제 - 하노이 탑(Tower of Hanoi)
+
+def hanoi_tower(n, source, target, auxiliary):
+    if n == 1:
+        print(f"{source} → {target}")
+        return
+    hanoi_tower(n - 1, source, auxiliary, target)
+    print(f"{source} → {target}")
+    hanoi_tower(n - 1, auxiliary, target, source)
+
+hanoi_tower(3, 'A', 'C', 'B')
