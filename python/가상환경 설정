@@ -1,0 +1,32 @@
+Python 가상환경(Virtual Environment) 관리
+
+1. 가상환경 생성
+   명령어: python -m venv venv
+   설명   : 프로젝트 최상위 폴더에서 실행 → ‘venv’ 폴더 생성
+
+2. 가상환경 활성화
+   • Windows (PowerShell/CMD)
+     1) cd venv\Scripts
+     2) activate
+     → 활성화 시 프롬프트 앞에 (venv) 표시
+   • macOS/Linux
+     source venv/bin/activate
+     → 프롬프트 앞에 (venv) 표시
+
+3. 가상환경 비활성화
+   명령어: deactivate
+   설명   : (venv) 표시 사라짐 → 기본 파이썬 환경으로 복귀
+
+4. 패키지 관리
+   • 설치된 모듈 확인   : pip list
+   • 특정 패키지 정보 확인 : pip show <패키지명>
+   • 패키지 설치       : pip install <패키지명>
+   • pip 버전 확인     : pip --version
+   • pip 업그레이드    : python -m pip install --upgrade pip
+   • 현재 설치된 패키지 버전 저장    : pip freeze > requirements.txt
+   • requirements.txt에 저장된 pip들 전체 다 설치하기   : pip install -r requirements.txt
+   
+—  
+Tip:
+• 프로젝트별 가상환경 분리로 의존성 충돌 방지  
+
