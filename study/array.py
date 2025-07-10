@@ -15,11 +15,11 @@ print(A[1:3])         # array('i', [2, 3])
 A.append(5)
 print(A.pop())        # 5
 
-# extend via iterable
+# 한 번에 여러 요소 추가하기
 A.extend([6,7,8])
 
 # 수치 연산 (루프)
 # 모든 요소 +1
 C = array.array('i', (x+1 for x in A))
-print(C)
+print(C) # array('i', [2, 3, 4, 5, 7, 8, 9])
 
