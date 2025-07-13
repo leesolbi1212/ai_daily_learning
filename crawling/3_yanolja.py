@@ -23,6 +23,7 @@ def crawl_yanolja_reviews(name, url):
     # print(review_containers)
     review_date = soup.select('#__next > section > div > div.css-1js0bc8 > div > div > div > div.css-1toaz2b > div > div.css-1ivchjf > p')
     
+    
     for i in range(len(review_containers)):
         review_text = review_containers[i].find('p', class_ = 'content-text').text
         # print(review_text)
@@ -44,3 +45,4 @@ def crawl_yanolja_reviews(name, url):
     
 total_review = crawl_yanolja_reviews('힐스테이트 제주', 'https://nol.yanolja.com/reviews/domestic/10045919' )
 print(total_review)
+
