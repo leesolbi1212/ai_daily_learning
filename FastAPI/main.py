@@ -20,6 +20,8 @@ async def get_page(request: Request):
     return templates.TemplateResponse("index.html",{"request":request})
 
 # 백엔드 API – JSON 데이터 제공
+
+
 @app.get("/api/data")
 async def get_data():
     return{"message":"FastAPI에서 보내는 데이터입니다."}

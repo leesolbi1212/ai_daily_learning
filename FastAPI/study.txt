@@ -23,4 +23,8 @@ FastAPI 실행 방법 : uvicorn main:app --reload
 - jinja2 설치하세용~
 
 
-http://127.0.0.1:8000/
+http://127.0.0.1:8000/docs 하면 Swagger가 만들어져 있음 
+
+
+REST와 RESTful API
+자원이 어디있는지 나타내는 형식, 클라이언트와 서버간의 통신을 위한 규칙을 제공, CRUD와 같은 기본적인 데이터 조작을 위한 메서드 제공 
