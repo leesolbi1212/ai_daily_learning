@@ -1,1 +1,6 @@
 .envOpenAI/.env
+.venv/
+voc.names
+custom_voc.yaml
+/openCV/venv/
+dog.bmp
