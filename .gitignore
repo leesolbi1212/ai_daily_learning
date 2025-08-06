@@ -3,4 +3,9 @@
 voc.names
 custom_voc.yaml
 /openCV/venv/
+/
 dog.bmp
+*.mp4
+*.avi
+movies/
+images/
